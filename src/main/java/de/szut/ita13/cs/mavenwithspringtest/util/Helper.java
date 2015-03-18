@@ -99,12 +99,13 @@ public class Helper {
      * @param qc Beinhaltet die Klasse QueryConfiguration.
      * @param context
      * @return Gibt das PreparedStatement zurück um es z.B. für ResultSet weiterzuverwenden.
-     * @throws SQLException Wirft eine Exception die durch eine fehlerhafte SQL Verbindung auftreten kann.
+     * @throws Exception Wirft eine Exception die durch eine fehlerhafte SQL Verbindung auftreten kann.
      */
-    public static PreparedStatement mySqlPreparation(QueryConfiguration qc, ApplicationContext context) throws SQLException {
+    public static PreparedStatement mySqlPreparation(QueryConfiguration qc, ApplicationContext context) throws Exception {
         DatabaseSettings dbs = (DatabaseSettings) context.getBean("databaseSettings");
+        Class.forName(dbs.getDriverClass());
         // Eine Verbindung wird aufgebaut mit der URL, dem Benutzer und das Passwort der Datenbank.
-        Connection con = DriverManager.getConnection(dbs.getCompleteUrl(), dbs.getUser(), dbs.getPasswd());
+        Connection con = DriverManager.getConnection(dbs.getUrl(), dbs.getUser(), dbs.getPasswd());
         // Die Query wird für PreparedStatement vorbereitet. Ein PreparedStatement schützt
         // vor SQL Injections.
         PreparedStatement ps = con.prepareStatement(qc.configureQuery());

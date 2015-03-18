@@ -17,7 +17,6 @@ import org.springframework.context.ApplicationContext;
  * @version 1.0 Java 1.8
  */
 public class Query {
-    
     /** Logger ist ein spezieller Logger der von Maven als Plugin implementiert wurde. */ 
     private final static transient Logger LOG = Logger.getLogger(Query.class);
     /**  Klasse die aufgerufen werden soll um die Tabellendaten in ein Objekt zu speichern. */

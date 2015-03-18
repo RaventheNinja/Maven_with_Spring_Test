@@ -1,7 +1,5 @@
 package de.szut.ita13.cs.mavenwithspringtest.properties;
 
-import de.szut.ita13.cs.mavenwithspringtest.util.Helper;
-
 /**
  * DatabaseSettings implementiert das Interface Settings und lädt die database.properties.
  * Die Werte die in der Datei stehen, werden den Attributen hinzugefügt.
@@ -18,7 +16,7 @@ public class DatabaseSettings implements Settings {
     /** Speichert das Passwort für den Zugang zu der Datenbank. */
     private String passwd;
     /** Speichert die Tabelle die genutzt werden soll. */
-    private String database;
+    private String driverClass;
     
     /**
      * Gibt das Attribut user zurück.
@@ -40,8 +38,12 @@ public class DatabaseSettings implements Settings {
      * Gibt ein zusammenbau aus der url und der database zurück. 
      * @return Enthält die vollständige URL zur Datenbank.
      */
-    public String getCompleteUrl() {
-        return Helper.mysqlUrl(url, database);
+    public String getUrl() {
+        return url;
+    }
+    
+    public String getDriverClass() {
+        return driverClass;
     }
 
     /**
@@ -74,9 +76,9 @@ public class DatabaseSettings implements Settings {
     /**
      * Setzt eine gegebene Datenbank für das Attribut.
      * Wird jedoch nur für den JUnit Test verwendet.
-     * @param database Enthält die Datenbank die benutzt werden soll.
+     * @param driverClass
      */
-    public void setDatabase(String database) {
-        this.database = database;
+    public void setDriverClass(String driverClass) {
+        this.driverClass = driverClass;
     }
 }
