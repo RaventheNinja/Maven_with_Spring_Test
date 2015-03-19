@@ -17,7 +17,6 @@ public class DatabaseDataSource implements DataSource {
     
     /**
      * Mit getData werden die Daten zurückgegeben für die Konsolenausgabe.
-     * Zusätzlich verbindet sich die Applikation mit der Datenbank und führt einen Query aus.
      * @param list Enthält die Objekt Information der Datenbanktabelle.
      * @return Ein String der "Hallo Welt!" enthält wird zurückgegeben. 
      */

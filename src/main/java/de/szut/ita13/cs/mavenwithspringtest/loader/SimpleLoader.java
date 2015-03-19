@@ -5,7 +5,7 @@ import de.szut.ita13.cs.mavenwithspringtest.editor.Editor;
 import de.szut.ita13.cs.mavenwithspringtest.output.Output;
 
 /**
- * SimpleLoader implementiert das Interface Loader und ist dazu da, die Klassen dynamisch zu instantizieren.
+ * SimpleLoader ist dazu da, die Klassen dynamisch zu instantizieren.
  * 
  * @author Christian Stiefel
  * @version 1.0 Java 1.8
