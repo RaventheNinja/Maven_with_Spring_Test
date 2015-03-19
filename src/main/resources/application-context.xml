@@ -18,7 +18,11 @@
         
     <context:annotation-config />
     <context:component-scan base-package="de.szut.ita13.cs.mavenwithspringtest" />
-    <!--   
+    
+    <bean id="app" class="de.szut.ita13.cs.mavenwithspringtest.App">
+        <property name="value" value="hans" />
+    </bean>
+    
     <bean id="simpleLoader" class="de.szut.ita13.cs.mavenwithspringtest.loader.SimpleLoader">
         <property name="editorClass" ref="lowerCaseEditor" />
         <property name="dataSourceClass" ref="dataBaseDataSource" />
@@ -35,9 +39,8 @@
     
     <bean id="consoleOutput" class="de.szut.ita13.cs.mavenwithspringtest.output.ConsoleOutput" />       
     <bean id="logOutput" class="de.szut.ita13.cs.mavenwithspringtest.output.LogOutput" /> 
-    -->
     
-    
+        
     <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="location">
             <value>database.properties</value>
@@ -71,14 +74,9 @@
         <property name="password" value="${password}" />
     </bean>
     
-    <bean id="queryConfiguration" class="de.szut.ita13.cs.mavenwithspringtest.query.QueryConfiguration" />
-    
     <tx:annotation-driven />
     <bean id="transactionManager"
           class="org.springframework.orm.hibernate4.HibernateTransactionManager">
         <property name="sessionFactory" ref="sessionFactory" />
     </bean>
-    
-    <bean id="app" class="de.szut.ita13.cs.mavenwithspringtest.App" />
-    
 </beans>

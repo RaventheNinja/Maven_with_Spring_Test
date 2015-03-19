@@ -3,5 +3,6 @@
 <hibernate-configuration>
   <session-factory>
     <mapping class="de.szut.ita13.cs.mavenwithspringtest.database.Example" />
+    <mapping class="de.szut.ita13.cs.mavenwithspringtest.database.KeyvalueExample" />
   </session-factory>
 </hibernate-configuration>

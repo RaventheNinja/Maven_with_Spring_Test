@@ -1,7 +1,7 @@
 package de.szut.ita13.cs.mavenwithspringtest.datasource;
 
-import de.szut.ita13.cs.mavenwithspringtest.database.Table;
-import java.util.ArrayList;
+import de.szut.ita13.cs.mavenwithspringtest.database.TableObject;
+import java.util.List;
 
 /**
  * HelloWorldDataSource implementiert das Interface DataSource und ist dazu da, 
@@ -18,7 +18,7 @@ public class HelloWorldDataSource implements DataSource{
      * @return Ein String der "Hallo Welt!" enthält wird zurückgegeben.  
      */
     @Override
-    public String getData(ArrayList<Table> list) {
+    public String getData(List<TableObject> list) {
         return "Hallo Welt!";
     }
 }

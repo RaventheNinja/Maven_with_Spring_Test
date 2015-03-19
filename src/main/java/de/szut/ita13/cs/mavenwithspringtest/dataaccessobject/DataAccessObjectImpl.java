@@ -1,9 +1,10 @@
 package de.szut.ita13.cs.mavenwithspringtest.dataaccessobject;
 
-import de.szut.ita13.cs.mavenwithspringtest.database.Example;
+import de.szut.ita13.cs.mavenwithspringtest.database.TableObject;
 import de.szut.ita13.cs.mavenwithspringtest.util.CustomHibernateDaoSupport;
 import java.util.List;
 import javax.transaction.Transactional;
+import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -19,30 +20,24 @@ public class DataAccessObjectImpl extends CustomHibernateDaoSupport implements D
     private SessionFactory sf;
     
     @Override
-    public void save(Example example) {
-        getHibernateTemplate().save(example);
+    public void save(TableObject tableObject) {
+        getHibernateTemplate().save(tableObject);
     }
 
     @Override
-    public void update(Example example) {
-        getHibernateTemplate().update(example);
+    public void update(TableObject tableObject) {
+        getHibernateTemplate().update(tableObject);
     }
 
     @Override
-    public void delete(Example example) {
-        getHibernateTemplate().delete(example);
-    }
-
-    @Override
-    public Example findByExampleCode(String exampleCode) {
-        List list = getHibernateTemplate().find("from example where id=?", exampleCode);
-        return (Example) list.get(0);
+    public void delete(TableObject tableObject) {
+        getHibernateTemplate().delete(tableObject);
     }
     
     @Transactional
     @Override
-    public List<Example> list() {
-        return (List<Example>)sf.getCurrentSession().createQuery("from Example").list();
+    public List<TableObject> list(String query, Object value) {
+        return (List<TableObject>)sf.getCurrentSession().createQuery(query).setParameter("code", value).list();
     }
     
 }

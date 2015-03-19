@@ -5,7 +5,7 @@ package de.szut.ita13.cs.mavenwithspringtest.database;
  * @author Christian Stiefel
  * @version 1.0 Java 1.8
  */
-public interface Table {
+public interface TableObject {
     
     /**
      * Lässt einen StringBuilder die Datensätze im Objekt zusammenfügen.

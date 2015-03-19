@@ -1,7 +1,7 @@
 package de.szut.ita13.cs.mavenwithspringtest.datasource;
 
-import de.szut.ita13.cs.mavenwithspringtest.database.Table;
-import java.util.ArrayList;
+import de.szut.ita13.cs.mavenwithspringtest.database.TableObject;
+import java.util.List;
 
 /**
  * Ein Interface welches die Daten zurückgibt die ausgegeben werden sollen.
@@ -16,6 +16,6 @@ public interface DataSource {
      * @return Einen String für die Konsolenausgabe.  
      */
 
-    String getData(ArrayList<Table> list);
+    String getData(List<TableObject> list);
 
 }

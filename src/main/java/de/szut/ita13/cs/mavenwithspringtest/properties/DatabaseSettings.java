@@ -7,7 +7,7 @@ package de.szut.ita13.cs.mavenwithspringtest.properties;
  * @author Christian Stiefel
  * @version 1.0 Java 1.8
  */
-public class DatabaseSettings implements Settings {
+public class DatabaseSettings {
     
     /** Speichert die URL zu der Datenbank die benutzt werden soll. */
     private String url;

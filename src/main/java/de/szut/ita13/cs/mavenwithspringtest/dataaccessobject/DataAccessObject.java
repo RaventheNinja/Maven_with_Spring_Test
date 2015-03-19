@@ -5,7 +5,7 @@
  */
 package de.szut.ita13.cs.mavenwithspringtest.dataaccessobject;
 
-import de.szut.ita13.cs.mavenwithspringtest.database.Example;
+import de.szut.ita13.cs.mavenwithspringtest.database.TableObject;
 import java.util.List;
 
 /**
@@ -14,14 +14,12 @@ import java.util.List;
  */
 public interface DataAccessObject {
 
-    void save(Example example);
+    void save(TableObject tableObject);
 
-    void update(Example example);
+    void update(TableObject tableObject);
 
-    void delete(Example example);
+    void delete(TableObject tableObject);
     
-    List<Example> list();
-
-    Example findByExampleCode(String exampleCode);
+    List<TableObject> list(String query, Object value);
 
 }

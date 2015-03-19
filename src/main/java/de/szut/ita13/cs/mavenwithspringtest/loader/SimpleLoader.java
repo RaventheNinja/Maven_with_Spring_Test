@@ -10,7 +10,7 @@ import de.szut.ita13.cs.mavenwithspringtest.output.Output;
  * @author Christian Stiefel
  * @version 1.0 Java 1.8
  */
-public class SimpleLoader implements Loader {
+public class SimpleLoader {
     
     /** Ein Attribut vom Typen Editor um die Klasse zurückzugeben. */
     private Editor editorClass;

@@ -1,6 +1,6 @@
 package de.szut.ita13.cs.mavenwithspringtest.businessobject;
 
-import de.szut.ita13.cs.mavenwithspringtest.database.Example;
+import de.szut.ita13.cs.mavenwithspringtest.database.TableObject;
 import java.util.List;
 
 /**
@@ -9,9 +9,8 @@ import java.util.List;
  */
 public interface BusinessObject {
     
-    void save(Example example);
-    void update(Example example);
-    void delete (Example example);
-    Example findByExampleCode(String exampleCode);
-    List<Example> list();
+    void save(TableObject tableObject);
+    void update(TableObject tableObject);
+    void delete (TableObject tableObject);
+    List<TableObject> list(String query, Object value);
 }
